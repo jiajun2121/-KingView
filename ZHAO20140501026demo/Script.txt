@@ -1,0 +1,72 @@
+/* 绘制椭圆 */
+  {
+  DRAWRECT graphic;
+  graphic.x1 = 0 * fact;
+  graphic.x2 = 64 * fact;
+  graphic.y1 = 0 * fact;
+  graphic.y2 = 64 * fact;
+  graphic.brushColor = 8816262;
+  graphic.brushStyle = 0;
+  graphic.brushHatch = 0;
+  graphic.fillStyle = 0;
+  graphic.fromColor = 8816262;
+  graphic.toColor = 0;
+  graphic.penColor = 3355443;
+  graphic.penStyle = 0;
+  graphic.penWidth = 1;
+  KVDrawEllipse( &graphic);
+  }
+/* 设置线属性动画连接 */
+  {
+  LINKPEN links;
+  links.nNum = 2;
+  PENCONTEXT array[2];
+  array[0].dColor = 255;
+  array[0].nStyle = 0;
+  array[0].nWidth = 1;
+  array[0].nValue = 0.000000;
+  array[1].dColor = 16711680;
+  array[1].nStyle = 0;
+  array[1].nWidth = 1;
+  array[1].nValue = 100.000000;
+  links.pPenContext = array;
+  char Express[2];
+  strcpy(Express,"1");
+  links.pExpress = Express;
+  KVLinkPen( &links);
+  }
+/* 设置填充属性动画连接 */
+  {
+  LINKBRUSH links;
+  links.nNum = 2;
+  BRUSHCONTEXT array[2];
+  array[0].dColor = 255;
+  array[0].nStyle = 0;
+  array[0].nHatch = 0;
+  array[0].nValue = 0.000000;
+  array[1].dColor = 16711680;
+  array[1].nStyle = 0;
+  array[1].nHatch = 0;
+  array[1].nValue = 100.000000;
+  links.pBrushContext = array;
+  char Express[2];
+  strcpy(Express,"1");
+  links.pExpress = Express;
+  KVLinkBrush( &links);
+  }
+/* 设置填充动画连接 */
+  {
+  LINKFILL links;
+  links.minVal = 99.000000;
+  links.maxVal = 100.000000;
+  links.minPercent = 99;
+  links.maxPercent = 100;
+  links.nDirect = 2;
+  links.defColor = 255;
+  links.defStyle = 0;
+  links.defHatch = 0;
+  char Express[2];
+  strcpy(Express,"1");
+  links.pExpress = Express;
+  KVLinkFill( &links);
+  }
